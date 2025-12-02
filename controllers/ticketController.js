@@ -5,6 +5,7 @@ import { inngest } from "../inngest/client.js";
 export const createTicket = async (req, res) => {
   try {
     const { title, description } = req.body;
+    console.log(title, description);
     if (!title || !description) {
       return res
         .status(400)
@@ -15,6 +16,7 @@ export const createTicket = async (req, res) => {
       description: description,
       createdBy: req.user._id.toString(),
     });
+    console.log(ticket);
     if (!ticket) {
       return res.json({
         success: false,

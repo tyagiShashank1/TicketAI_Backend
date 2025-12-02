@@ -11,3 +11,5 @@
 - SMTP server → recipient’s mail server.
 - Recipient downloads via IMAP/POP3.
 - So SMTP is just the sending pipeline.
+
+ - Todos: Deploy backend to production, map all the configs, make it run successfully.

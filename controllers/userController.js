@@ -6,7 +6,7 @@ import { inngest } from "../inngest/client.js";
 //Register
 export const createUser = async (req, res) => {
   try {
-    const { email, password, skills = [] } = req.body;
+    const { email, password, role, skills = [] } = req.body;
     console.log(req.body);
     const user = await User.findOne({ email: email });
     console.log(user);
@@ -17,7 +17,7 @@ export const createUser = async (req, res) => {
       const user = await User.create({
         email: email,
         password: hashedPassword,
-        role: "user",
+        role: role,
         skills: skills,
       });
       console.log(user);
